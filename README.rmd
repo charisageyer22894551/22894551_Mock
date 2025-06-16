@@ -1,0 +1,30 @@
+---
+output: github_document
+  md_document:
+    variant: markdown_github
+---
+
+# Purpose
+
+This is the main README for the mock exam where I will outline the process of data wrangling and obtaining all results. Each question is saved as its own project, with its own texevier/ readme files. 
+
+
+```{r}
+
+rm(list = ls()) # Clean your environment:
+gc() # garbage collection - It can be useful to call gc after a large object has been removed, as this may prompt R to return memory to the operating system.
+library(tidyverse)
+list.files('code/', full.names = T, recursive = T) %>% .[grepl('.R', .)] %>% as.list() %>% walk(~source(.))
+```
+# Create Question folders
+```{r}
+
+Texevier::create_template("C:/Users/Charisa/OneDrive - Stellenbosch University/Documents/2025/Semester 1/Data_Science/22894551_Mock", "Question 1")
+
+Texevier::create_template("C:/Users/Charisa/OneDrive - Stellenbosch University/Documents/2025/Semester 1/Data_Science/22894551_Mock", "Question 2")
+
+Texevier::create_template("C:/Users/Charisa/OneDrive - Stellenbosch University/Documents/2025/Semester 1/Data_Science/22894551_Mock", "Question 3")
+
+```
+
+
