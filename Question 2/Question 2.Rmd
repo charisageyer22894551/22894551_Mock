@@ -108,7 +108,8 @@ if(!require("tidyverse")) install.packages("tidyverse")
 library(tidyverse)
 
 list.files('code/', full.names = T, recursive = T) %>% .[grepl('.R', .)] %>% as.list() %>% walk(~source(.))
-list.files('...//Question 1/code/', full.names = T, recursive = T) %>% .[grepl('.R', .)] %>% as.list() %>% walk(~source(.))
+list.files('..//Question 1/code/', full.names = T, recursive = T) %>% .[grepl('.R', .)] %>% as.list() %>% walk(~source(.))
+
 
 # Load the data
 WineMag <- readRDS("~/2025/Semester 1/Data_Science/22894551_Mock/Question 2/data/Wine/WineMag.rds")
@@ -127,5 +128,12 @@ WineMagReduced <- WineMag %>% filter(country %in% CountryList)
 
 # Introduction \label{Introduction}
 
-This question looks at wine reviews! 
+This question looks at wine reviews of wines in SA, italy, FRance, USa and Spain only. 
+# (a) Ratings per country
+Plot how many ratings each country received as a barplot, with the median score placed
+vertically above each bar.
+```{r}
+q2 <- reviewcount_barplot(WineMag, xaxis_rows = 1)
+q2
+```
 

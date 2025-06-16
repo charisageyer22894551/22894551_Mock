@@ -81,6 +81,7 @@ of Sommeliers globally, and also show which wines and regions are preferred in S
 Plot how many ratings each country received as a barplot, with the median score placed
 vertically above each bar.
 ```{r}
-
+q2 <- reviewcount_barplot(WineMag, xaxis_rows = 1)
+q2
 ```
 
