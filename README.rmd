@@ -1,7 +1,7 @@
 ---
-output: github_document
-  md_document:
-    variant: markdown_github
+output: github_document 
+author: Charisa Geyer (22894551)
+date: 16-06-2025
 ---
 
 # Purpose
@@ -9,14 +9,13 @@ output: github_document
 This is the main README for the mock exam where I will outline the process of data wrangling and obtaining all results. Each question is saved as its own project, with its own texevier/ readme files. 
 
 
-```{r}
-
+```{r, echo=FALSE}
 rm(list = ls()) # Clean your environment:
 gc() # garbage collection - It can be useful to call gc after a large object has been removed, as this may prompt R to return memory to the operating system.
 library(tidyverse)
 list.files('code/', full.names = T, recursive = T) %>% .[grepl('.R', .)] %>% as.list() %>% walk(~source(.))
 ```
-# Create Question folders
+# Create Question folders using Texevier
 ```{r}
 
 Texevier::create_template("C:/Users/Charisa/OneDrive - Stellenbosch University/Documents/2025/Semester 1/Data_Science/22894551_Mock", "Question 1")
@@ -26,5 +25,52 @@ Texevier::create_template("C:/Users/Charisa/OneDrive - Stellenbosch University/D
 Texevier::create_template("C:/Users/Charisa/OneDrive - Stellenbosch University/Documents/2025/Semester 1/Data_Science/22894551_Mock", "Question 3")
 
 ```
+
+# Question 1: World Happiness Report
+
+
+I put the unzipped data files in their respective question folders.
+
+I must collate the data into a single dataframe. 
+I created a function called data_collating to do so.
+Remember to run the list.files thing again to load the function!
+
+```{r}
+Datroot <- "C:/Users/Charisa/OneDrive - Stellenbosch University/Documents/2025/Semester 1/Data_Science/22894551_Mock/Question 1/data/Happy"
+datcolat <- data_collating(Datroot)
+```
+
+## (a) First plot
+We want to plot per region, the Ladder Score, upperwhisker and lowerwhiskers using ggplot. Also,
+add directly above each region’s plot the average Healthy Life Expectancy. Your plot
+should also be arranged by Average Life Expectancy.
+Let's create a function to create the errorgeombar. 
+```{r, warning =  FALSE, fig.align = 'center', fig.cap = "Happiness Ladder.\\label{Figure1}", fig.ext = 'png', fig.height = 5, fig.width = 7}
+
+q1 <- geom_errorbar_plot(datcolat, xaxis_size = 5, xaxis_rows = 3)
+
+q1
+
+```
+
+## (b) Second plot
+Create a barplot that shows the breakdown of Ladder scores per region. Arrange the
+regions as they appear in the plot by Ladder score. Also, add South Africa’s ladder to
+this plot (make SA the first bar).
+First I created a function that puts the data into a workable format with all components specified and only the relevant columns selected. 
+Then I create the graph using ggplot. 
+
+
+```{r}
+q1b <- Barplot_breakdown(datcolat, Title = "Breakdown of WHR Ladder Score by region", Subtitle ="Comparison with South Africa", xaxis_size = 9, xaxis_rows = 3)
+
+q1b
+```
+
+<!-- It needs to show what contributes to the Ladder score. so it is best to do a stacked bargraph. -->
+<!-- ```{r} -->
+
+<!-- ``` -->
+
 
 
