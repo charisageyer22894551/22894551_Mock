@@ -73,4 +73,14 @@ q1b
 <!-- ``` -->
 
 
+# Question 2 - Wine Whine Wine
+
+Task: write a short piece on the preferences
+of Sommeliers globally, and also show which wines and regions are preferred in South Africa
+
+Plot how many ratings each country received as a barplot, with the median score placed
+vertically above each bar.
+```{r}
+
+```
 

@@ -125,7 +125,7 @@ datcolat <- data_collating(Datroot)
 <!-- # Start Writing here: -->
 <!-- ############################## -->
 
-# Introduction \\label{Introduction}
+# Introduction
 
 The World Happiness report suggests that Happiness and life expectancy is highly correlated. We want to find out if that is true. This paper will analyse the World Happiness Report for () countries.
 
@@ -153,16 +153,16 @@ q1b
 <!-- Make title of bibliography here: -->
 <!-- \newpage -->
 
-# References {-}
+<!-- # References {-} -->
 
-<div id="refs"></div>
+<!-- <div id="refs"></div> -->
 
 
-# Appendix {-}
+<!-- # Appendix {-} -->
 
-## Appendix A {-}
+<!-- ## Appendix A {-} -->
 
-Some appendix information here
+<!-- Some appendix information here -->
 
-## Appendix B {-}
+<!-- ## Appendix B {-} -->
 
